@@ -1,0 +1,33 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.CreateEnvFile",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "datastream",
+  "ownership": "server",
+  "aggregation": "object",
+  "description": "An env file parsing request.",
+  "doc": "Instructs the runtime to read a file sent trough the file transfer and to parse its content to add environment variables to the container.",
+  "mappings": [
+    {
+      "endpoint": "/bind/id",
+      "type": "string",
+      "reliability": "guaranteed",
+      "description": "Create file biind request id",
+      "doc": "Unique id for the file bind."
+    },
+    {
+      "endpoint": "/bind/targetId",
+      "type": "string",
+      "reliability": "guaranteed",
+      "description": "the target file id.",
+      "doc": "The target file id. Can be either a file request id or a file storage id. The type specifies which one to use."
+    },
+    {
+      "endpoint": "/bind/targetType",
+      "type": "string",
+      "reliability": "guaranteed",
+      "description": "The target file type.",
+      "doc": "The target file type. Possible values are: [storage, request]."
+    }
+  ]
+}
