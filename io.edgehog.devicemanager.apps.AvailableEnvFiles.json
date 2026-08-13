@@ -1,0 +1,23 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.AvailableEnvFiles",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "properties",
+  "ownership": "device",
+  "description": "The available env files.",
+  "doc": "Exposes the environment files available on the device.",
+  "mappings": [
+    {
+      "endpoint": "/%{env_file_id}/targetId",
+      "type": "string",
+      "description": "the target file id.",
+      "doc": "The target file id. Can be either a file request id or a file storage id. The type specifies which one to use."
+    },
+    {
+      "endpoint": "/%{env_file_id}/targetType",
+      "type": "string",
+      "description": "The target file type.",
+      "doc": "The target file type. Possible values are: [storage, request]."
+    }
+  ]
+}

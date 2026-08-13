@@ -1,0 +1,41 @@
+{
+  "interface_name": "io.edgehog.devicemanager.apps.AvailableFileBinds",
+  "version_major": 0,
+  "version_minor": 1,
+  "type": "properties",
+  "ownership": "device",
+  "description": "The available file bind.",
+  "doc": "Exposes the file binds available on the device",
+  "mappings": [
+    {
+      "endpoint": "/%{bind_id}/targetId",
+      "type": "string",
+      "description": "the target file id.",
+      "doc": "The target file id. Depending on the type might refer to a file storage or to a file request id."
+    },
+    {
+      "endpoint": "/%{bind_id}/deploymentId",
+      "type": "string",
+      "description": "the target deployment id.",
+      "doc": "The Id of a deployment that contains a container with this file bind."
+    },
+    {
+      "endpoint": "/%{bind_id}/targetType",
+      "type": "string",
+      "description": "The target file type.",
+      "doc": "Instructs the runtime on which type of file we're referring to. Its possible values are: [storage, request]."
+    },
+    {
+      "endpoint": "/%{bind_id}/mountpoint",
+      "type": "string",
+      "description": "the mountpoint into the device.",
+      "doc": "Where the file should be mounted onto the container. Must be an absolute path."
+    },
+    {
+      "endpoint": "/%{bind_id}/options",
+      "type": "string",
+      "description": "Binding options.",
+      "doc": "The binding options the device manager must follow when binding the file onto the device."
+    }
+  ]
+}
